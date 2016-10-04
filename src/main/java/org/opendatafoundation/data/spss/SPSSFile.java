@@ -361,7 +361,7 @@ public class SPSSFile extends RandomAccessFile {
     // HEADER
     log(infoRecord.toString());
     // VARIABLES
-    Iterator varIterator = variableMap.keySet().iterator();
+    Iterator<Integer> varIterator = variableMap.keySet().iterator();
     while(varIterator.hasNext()) {
       SPSSVariable var = variableMap.get(varIterator.next());
       log(var.variableRecord.toString());

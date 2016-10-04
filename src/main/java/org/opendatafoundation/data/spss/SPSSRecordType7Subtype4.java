@@ -66,7 +66,8 @@ public class SPSSRecordType7Subtype4 extends SPSSAbstractRecordType {
 
   List<byte[]> dataElement;
 
-  public void read(SPSSFile is) throws IOException, SPSSFileException {
+  @Override
+public void read(SPSSFile is) throws IOException, SPSSFileException {
     // position in file
     fileLocation = is.getFilePointer();
 
@@ -95,7 +96,8 @@ public class SPSSRecordType7Subtype4 extends SPSSAbstractRecordType {
     lowest = is.readSPSSDouble();
   }
 
-  public String toString() {
+  @Override
+public String toString() {
     String str = "";
     str += "\nRECORD TYPE 7 SUBTYPE 4 - RELEASE AND MACHINE SPECIFIC FLOAT INFORMATION";
     str += "\nLocation        : " + fileLocation;

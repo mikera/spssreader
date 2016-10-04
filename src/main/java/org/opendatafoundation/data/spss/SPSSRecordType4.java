@@ -43,7 +43,8 @@ public class SPSSRecordType4 extends SPSSAbstractRecordType {
 
   int[] variableIndex;
 
-  public void read(SPSSFile is) throws IOException, SPSSFileException {
+  @Override
+public void read(SPSSFile is) throws IOException, SPSSFileException {
     // position in file
     fileLocation = is.getFilePointer();
 
@@ -60,7 +61,8 @@ public class SPSSRecordType4 extends SPSSAbstractRecordType {
     }
   }
 
-  public String toString() {
+  @Override
+public String toString() {
     String str = "";
     str += "\nRECORD TYPE 4 - VARIABLE INDEX RECORD FOR VALUE LABELS";
     str += "\nLocation        : " + fileLocation;

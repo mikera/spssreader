@@ -127,7 +127,8 @@ public class SPSSRecordType7Subtype21 extends SPSSAbstractRecordType {
       return name;
     }
 
-    public String toString() {
+    @Override
+	public String toString() {
       StringBuilder str = new StringBuilder() //
           .append("\nVariable").append("\n- Variable name length  : ").append(variableNameLength) //
           .append("\n- Variable name         : ").append(name) //
@@ -166,7 +167,8 @@ public class SPSSRecordType7Subtype21 extends SPSSAbstractRecordType {
       return value;
     }
 
-    @SuppressWarnings("StringBufferReplaceableByString")
+    @Override
+	@SuppressWarnings("StringBufferReplaceableByString")
     public String toString() {
       return new StringBuilder() //
           .append("\nLabels") //

@@ -79,7 +79,8 @@ public class FileFormatInfo {
     this.format = format;
   }
 
-  public String toString() {
+  @Override
+public String toString() {
     String str;
     str = format.name();
     if(format == Format.ASCII) {

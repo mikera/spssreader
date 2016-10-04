@@ -61,7 +61,8 @@ public class SPSSRecordType1 extends SPSSAbstractRecordType {
 
   String fileLabel;
 
-  public void read(SPSSFile is) throws IOException, SPSSFileException {
+  @Override
+public void read(SPSSFile is) throws IOException, SPSSFileException {
     // position in file
     fileLocation = is.getFilePointer();
     // signature
@@ -108,7 +109,8 @@ public class SPSSRecordType1 extends SPSSAbstractRecordType {
     is.skipBytes(3);
   }
 
-  public String toString() {
+  @Override
+public String toString() {
     String str = "";
     str += "\nRECORD TYPE 1 - GENERAL INFO";
     str += "\nLocation        : " + fileLocation;

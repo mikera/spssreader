@@ -89,7 +89,8 @@ public class SPSSNumericVariable extends SPSSVariable {
    *
    * @throws SPSSFileException
    */
-  public SPSSVariableCategory addCategory(byte[] byteValue, String label) throws SPSSFileException {
+  @Override
+public SPSSVariableCategory addCategory(byte[] byteValue, String label) throws SPSSFileException {
     double value = SPSSUtils.byte8ToDouble(byteValue);
     return (addCategory(value, label));
   }
@@ -119,7 +120,8 @@ public class SPSSNumericVariable extends SPSSVariable {
    *
    * @throws SPSSFileException
    */
-  public SPSSVariableCategory getCategory(byte[] byteValue) throws SPSSFileException {
+  @Override
+public SPSSVariableCategory getCategory(byte[] byteValue) throws SPSSFileException {
     double value = SPSSUtils.byte8ToDouble(byteValue);
     return (getCategory(value));
   }
@@ -136,7 +138,8 @@ public class SPSSNumericVariable extends SPSSVariable {
   /**
    * @return A string representing variable in SPSS syntax
    */
-  public String getSPSSFormat() {
+  @Override
+public String getSPSSFormat() {
     String formatStr = "";
     switch(variableRecord.writeFormatType) {
       case 3: // comma
@@ -222,7 +225,8 @@ public class SPSSNumericVariable extends SPSSVariable {
    * @param dataFormat the file format
    * @throws SPSSFileException
    */
-  public String getValueAsString(int obsNumber, FileFormatInfo dataFormat) throws SPSSFileException {
+  @Override
+public String getValueAsString(int obsNumber, FileFormatInfo dataFormat) throws SPSSFileException {
     String strValue;
     double val;
 

@@ -46,7 +46,8 @@ public class SPSSRecordType3 extends SPSSAbstractRecordType {
 
   Map<byte[], String> valueLabel = new LinkedHashMap<byte[], String>();
 
-  public void read(SPSSFile is) throws IOException, SPSSFileException {
+  @Override
+public void read(SPSSFile is) throws IOException, SPSSFileException {
     // position in file
     fileLocation = is.getFilePointer();
 
@@ -91,7 +92,8 @@ public class SPSSRecordType3 extends SPSSAbstractRecordType {
     }
   }
 
-  public String toString() {
+  @Override
+public String toString() {
     String str = "";
     str += "\nRECORD TYPE 3 - VALUE LABEL RECORD";
     str += "\nLocation        : " + fileLocation;

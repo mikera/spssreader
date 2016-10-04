@@ -56,7 +56,8 @@ public class SPSSRecordType7Subtype5 extends SPSSAbstractRecordType {
 
   List<byte[]> dataElement;
 
-  public void read(SPSSFile is) throws IOException, SPSSFileException {
+  @Override
+public void read(SPSSFile is) throws IOException, SPSSFileException {
     // position in file
     fileLocation = is.getFilePointer();
 
@@ -81,7 +82,8 @@ public class SPSSRecordType7Subtype5 extends SPSSAbstractRecordType {
     variableSets = is.readSPSSString(numberOfDataElements);
   }
 
-  public String toString() {
+  @Override
+public String toString() {
     String str = "";
     str += "\nRECORD TYPE 7 SUBTYPE 5 - VARIABLE SETS INFORMATION";
     str += "\nLocation        : " + fileLocation;

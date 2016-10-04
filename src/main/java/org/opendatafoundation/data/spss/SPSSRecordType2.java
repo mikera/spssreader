@@ -324,7 +324,8 @@ public class SPSSRecordType2 extends SPSSAbstractRecordType {
   /**
    * Read the record in the SPSS file
    */
-  public void read(SPSSFile is) throws IOException, SPSSFileException {
+  @Override
+public void read(SPSSFile is) throws IOException, SPSSFileException {
     file = is;
     // position in file
     fileLocation = is.getFilePointer();
@@ -369,7 +370,8 @@ public class SPSSRecordType2 extends SPSSAbstractRecordType {
     }
   }
 
-  public String toString() {
+  @Override
+public String toString() {
     String str = "";
     str += "\nRECORD TYPE 2 - VARIABLE";
     str += "\nLocation        : " + fileLocation;

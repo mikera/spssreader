@@ -78,7 +78,8 @@ public class SPSSStringVariable extends SPSSVariable {
   /**
    * Adds a category to the variable
    */
-  public SPSSVariableCategory addCategory(byte[] byteValue, String label) {
+  @Override
+public SPSSVariableCategory addCategory(byte[] byteValue, String label) {
     SPSSVariableCategory cat;
     String strValue;
     if(file.charset == null) {
@@ -101,7 +102,8 @@ public class SPSSStringVariable extends SPSSVariable {
   /**
    * Gets a category for this variable based on a byte[8] value
    */
-  public SPSSVariableCategory getCategory(byte[] byteValue) {
+  @Override
+public SPSSVariableCategory getCategory(byte[] byteValue) {
     String strValue;
     if(file.charset == null) {
       strValue = SPSSUtils.byte8ToString(byteValue);
@@ -121,7 +123,8 @@ public class SPSSStringVariable extends SPSSVariable {
   /**
    * @return A string representing variable in SPSS syntax
    */
-  public String getSPSSFormat() {
+  @Override
+public String getSPSSFormat() {
     // TODO: AHEXw format?
     return ("A" + variableRecord.writeFormatWidth);
   }
@@ -131,7 +134,8 @@ public class SPSSStringVariable extends SPSSVariable {
    *
    * @throws SPSSFileException
    */
-  public String getValueAsString(int obsNumber, FileFormatInfo dataFormat) throws SPSSFileException {
+  @Override
+public String getValueAsString(int obsNumber, FileFormatInfo dataFormat) throws SPSSFileException {
     String strValue;
 
     // check range

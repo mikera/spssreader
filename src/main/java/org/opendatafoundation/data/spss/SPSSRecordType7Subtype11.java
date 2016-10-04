@@ -55,7 +55,8 @@ public class SPSSRecordType7Subtype11 extends SPSSAbstractRecordType {
    * a collection of VariableDisplayParams (one for each variable)
    */
 
-  public void read(SPSSFile is) throws IOException, SPSSFileException {
+  @Override
+public void read(SPSSFile is) throws IOException, SPSSFileException {
     // position in file
     fileLocation = is.getFilePointer();
 
@@ -92,7 +93,8 @@ public class SPSSRecordType7Subtype11 extends SPSSAbstractRecordType {
     }
   }
 
-  public String toString() {
+  @Override
+public String toString() {
     String str = "";
     str += "\nRECORD TYPE 7 SUBTYPE 11 - VARIABLE DISPLAY PARAMETERS";
     str += "\nLocation        : " + fileLocation;
